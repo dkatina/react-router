@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import './NavBar.css'
 
 const NavBar = () => {
     const navigate = useNavigate(); //creates a navigate function, that you can call with any path as the argument and nav to that route
@@ -13,16 +14,16 @@ const NavBar = () => {
 
 
   return (
-    <div>
+    <>
         <nav>
-            <h1>Dylan.com</h1>
-            <ul>
-                <Link to='/'>Home</Link> 
-                <NavLink to='/about'>About</NavLink>
-                <button onClick={(event)=>{handleClick(event)}}>Contact</button>
+            <h1><Link to='/' >Dylan.com</Link></h1>
+            <ul className='navLinks'>
+                <NavLink className='navLink' to='/'>Home</NavLink> 
+                <NavLink className='navLink' to='/about'>About</NavLink>
+                <NavLink className='navLink' to='/contact'>Contact</NavLink>
             </ul>
         </nav>
-    </div>
+    </>
   )
 }
 
