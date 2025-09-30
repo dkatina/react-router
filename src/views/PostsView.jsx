@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar/NavBar'
+import PostCard from '../components/PostCard/PostCard'
 
 const PostsView = () => {
     const [posts, setPosts] = useState([])
@@ -18,10 +19,12 @@ const PostsView = () => {
   return (
     <>
     <NavBar/>
-    <div>PostsView</div>
-    {posts.map((post, indx)=>(
-        <p>{post.title}</p>
+    <h2>PostsView</h2>
+    <div className="my-posts">
+    {posts.map((post, idx)=>(
+        <PostCard className="post-card" key={idx} title={post.title} body={post.body} id={post.id}/>
     ))}
+    </div>
     </>
   )
 }
