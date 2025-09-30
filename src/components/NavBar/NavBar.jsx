@@ -16,11 +16,12 @@ const NavBar = () => {
   return (
     <>
         <nav>
-            <h1><Link to='/' >Dylan.com</Link></h1>
+            <h1><Link to='/' className='logo'>Dylan.com</Link></h1>
             <ul className='navLinks'>
-                <NavLink className='navLink' to='/'>Home</NavLink> 
-                <NavLink className='navLink' to='/about'>About</NavLink>
-                <NavLink className='navLink' to='/contact'>Contact</NavLink>
+                <NavLink className={({isActive})=> isActive? 'isActive': 'navLink' } to='/'>HOME</NavLink> 
+                <NavLink className={({isActive})=> isActive? 'isActive': 'navLink' } to='/about'>ABOUT</NavLink>
+                <NavLink className={({isActive})=> isActive? 'isActive': 'navLink' } to='/contact'>CONTACT</NavLink>
+                <NavLink className={({isActive})=> isActive? 'isActive': 'navLink' } to='/posts'>POST</NavLink>
             </ul>
         </nav>
     </>
